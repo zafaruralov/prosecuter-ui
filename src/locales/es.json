@@ -1,0 +1,27 @@
+{
+  "welcome": "Bienvenido",
+  "hello": "Hola",
+  "goodbye": "Adiós",
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "search": "Buscar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "validation": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor ingrese un correo válido",
+    "min": "Se requieren al menos {count} caracteres",
+    "max": "Máximo {count} caracteres permitidos"
+  }
+}
+
