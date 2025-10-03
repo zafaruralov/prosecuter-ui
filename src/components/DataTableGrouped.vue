@@ -87,39 +87,35 @@
 <template>
   <div class="w-full">
     <div class="rounded-md border">
-      <div class="rounded-md border overflow-x-auto">
-        <div class="min-w-[960px]">
-          <Table>
-            <TableHeader>
-              <TableRow v-for="hg in table.getHeaderGroups()" :key="hg.id">
-                <TableHead
-                  v-for="header in hg.headers"
-                  :key="header.id"
-                  :colspan="header.colSpan"
-                  :rowspan="
-                    header.colSpan === 1 && !header.subHeaders?.length
-                      ? table.getHeaderGroups().length - header.depth
-                      : 1
-                  "
-                >
-                  <FlexRender
-                    v-if="!header.isPlaceholder"
-                    :render="header.column.columnDef.header"
-                    :props="header.getContext()"
-                  />
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow v-for="row in table.getRowModel().rows" :key="row.id">
-                <TableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
-                  {{ cell.getValue() }}
-                </TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
-      </div>
+      <Table>
+        <TableHeader>
+          <TableRow v-for="hg in table.getHeaderGroups()" :key="hg.id">
+            <TableHead
+              v-for="header in hg.headers"
+              :key="header.id"
+              :colspan="header.colSpan"
+              :rowspan="
+                header.colSpan === 1 && !header.subHeaders?.length
+                  ? table.getHeaderGroups().length - header.depth
+                  : 1
+              "
+            >
+              <FlexRender
+                v-if="!header.isPlaceholder"
+                :render="header.column.columnDef.header"
+                :props="header.getContext()"
+              />
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow v-for="row in table.getRowModel().rows" :key="row.id">
+            <TableCell v-for="cell in row.getVisibleCells()" :key="cell.id">
+              {{ cell.getValue() }}
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
     </div>
 
     <div class="flex items-center justify-end gap-2 py-4">
